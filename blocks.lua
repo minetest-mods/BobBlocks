@@ -74,7 +74,7 @@ core.register_node("bobblocks:block_off", {
 	on_rightclick = bobblocks.update_bobblock,
 	on_construct = unifieddyes.on_construct,
 	preserve_metadata = unifieddyes.preserve_metadata,
-	on_dig = not unifieddyes.preserve_metadata and unifieddyes.on_dig or nil
+	on_dig = not unifieddyes.preserve_metadata and unifieddyes.on_dig or nil,
 })
 
 -- Block Poles
@@ -99,7 +99,7 @@ core.register_node("bobblocks:pole", {
 	on_rightclick = bobblocks.update_bobblock,
 	on_construct = unifieddyes.on_construct,
 	preserve_metadata = unifieddyes.preserve_metadata,
-	on_dig = not unifieddyes.preserve_metadata and unifieddyes.on_dig or nil
+	on_dig = not unifieddyes.preserve_metadata and unifieddyes.on_dig or nil,
 })
 
 core.register_node("bobblocks:pole_off", {
@@ -124,7 +124,7 @@ core.register_node("bobblocks:pole_off", {
 	on_rightclick = bobblocks.update_bobblock,
 	on_construct = unifieddyes.on_construct,
 	preserve_metadata = unifieddyes.preserve_metadata,
-	on_dig = not unifieddyes.preserve_metadata and unifieddyes.on_dig or nil
+	on_dig = not unifieddyes.preserve_metadata and unifieddyes.on_dig or nil,
 })
 
 -- old nodes grandfathered-in because they have a different texture or usage than the colored ones.
@@ -160,7 +160,7 @@ core.register_node("bobblocks:wavyblock", {
 	on_rightclick = bobblocks.update_bobblock,
 	on_construct = unifieddyes.on_construct,
 	preserve_metadata = unifieddyes.preserve_metadata,
-	on_dig = not unifieddyes.preserve_metadata and unifieddyes.on_dig or nil
+	on_dig = not unifieddyes.preserve_metadata and unifieddyes.on_dig or nil,
 })
 
 core.register_node("bobblocks:wavyblock_off", {
@@ -182,7 +182,7 @@ core.register_node("bobblocks:wavyblock_off", {
 	on_rightclick = bobblocks.update_bobblock,
 	on_construct = unifieddyes.on_construct,
 	preserve_metadata = unifieddyes.preserve_metadata,
-	on_dig = not unifieddyes.preserve_metadata and unifieddyes.on_dig or nil
+	on_dig = not unifieddyes.preserve_metadata and unifieddyes.on_dig or nil,
 })
 
 core.register_node("bobblocks:wavypole", {
@@ -199,7 +199,7 @@ core.register_node("bobblocks:wavypole", {
 	groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3, ud_param2_colorable = 1},
 	on_construct = unifieddyes.on_construct,
 	preserve_metadata = unifieddyes.preserve_metadata,
-	on_dig = not unifieddyes.preserve_metadata and unifieddyes.on_dig or nil
+	on_dig = not unifieddyes.preserve_metadata and unifieddyes.on_dig or nil,
 	--light_source = LIGHT_MAX-0,
 })
 
