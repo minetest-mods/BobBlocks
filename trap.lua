@@ -11,7 +11,7 @@ local update_bobtrap = function (pos, node)
         elseif node.name == 'bobblocks:trap_spike_major' then nodename = 'bobblocks:trap_spike_major_set'
         elseif node.name == 'bobblocks:trap_spike_major_set' then nodename = 'bobblocks:trap_spike_major'
     end
-    minetest.add_node(pos, {name = nodename})
+    core.add_node(pos, {name = nodename})
 end
 
 -- Punch Traps    
@@ -25,17 +25,17 @@ local on_bobtrap_punched = function (pos, node, puncher)
     end
 end
 
-minetest.register_on_punchnode(on_bobtrap_punched)
+core.register_on_punchnode(on_bobtrap_punched)
 
 
 --ABM (Spring The Traps)
 
-minetest.register_abm(
+core.register_abm(
 	{nodenames = {"bobblocks:trap_spike_set"},
     interval = 1.0,
     chance = 1,
     action = function(pos, node, active_object_count, active_object_count_wider)
-    local objs = minetest.get_objects_inside_radius(pos, 1)
+    local objs = core.get_objects_inside_radius(pos, 1)
         for k, obj in pairs(objs) do
         
         update_bobtrap(pos, node)
@@ -44,12 +44,12 @@ minetest.register_abm(
      
 })
 
-minetest.register_abm(
+core.register_abm(
 	{nodenames = {"bobblocks:trap_spike_major_set"},
     interval = 1.0,
     chance = 1,
     action = function(pos, node, active_object_count, active_object_count_wider)
-    local objs = minetest.get_objects_inside_radius(pos, 1)
+    local objs = core.get_objects_inside_radius(pos, 1)
         for k, obj in pairs(objs) do
         
         update_bobtrap(pos, node)
@@ -62,7 +62,7 @@ minetest.register_abm(
 
 
 -- Nodes
-minetest.register_node("bobblocks:trap_grass", {
+core.register_node("bobblocks:trap_grass", {
 	description = "Trap Grass",
     tiles = {"default_grass.png"},
 	paramtype2 = "facedir",
@@ -73,7 +73,7 @@ minetest.register_node("bobblocks:trap_grass", {
     climbable = false,
 })
 
-minetest.register_node("bobblocks:trap_spike", {
+core.register_node("bobblocks:trap_spike", {
 	description = "Trap Spike Minor",
     drawtype = "plantlike",
     visual_scale = 1,
@@ -85,7 +85,7 @@ minetest.register_node("bobblocks:trap_spike", {
     groups = {cracky=3,melty=3},
 })
 
-minetest.register_node("bobblocks:trap_spike_set", {
+core.register_node("bobblocks:trap_spike_set", {
 	description = "Trap Spike Minor Set",
     drawtype = "raillike",
     visual_scale = 1,
@@ -98,7 +98,7 @@ minetest.register_node("bobblocks:trap_spike_set", {
 })
 
 
-minetest.register_node("bobblocks:trap_spike_major", {
+core.register_node("bobblocks:trap_spike_major", {
 	description = "Trap Spike Major",
     drawtype = "plantlike",
     visual_scale = 1,
@@ -110,7 +110,7 @@ minetest.register_node("bobblocks:trap_spike_major", {
     groups = {cracky=2,melty=2},
 })
 
-minetest.register_node("bobblocks:trap_spike_major_set", {
+core.register_node("bobblocks:trap_spike_major_set", {
 	description = "Trap Spike Major Set",
     drawtype = "raillike",
     visual_scale = 1,
@@ -125,7 +125,7 @@ minetest.register_node("bobblocks:trap_spike_major_set", {
 
 -- Crafting
 
-minetest.register_craft({
+core.register_craft({
 	output = 'bobblocks:trap_spike',
 	recipe = {
 		{'', '', ''},
@@ -134,7 +134,7 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = 'bobblocks:trap_spike_major',
 	recipe = {
 		{'', 'default:cobble', ''},
@@ -143,7 +143,7 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+core.register_craft({
 	output = 'bobblocks:trap_grass',
 	recipe = {
 		{'', '', ''},
@@ -153,29 +153,29 @@ minetest.register_craft({
 })
 
 -- ABM
-minetest.register_abm(
+core.register_abm(
 	{nodenames = {"bobblocks:trap_spike"},
     interval = 1.0,
     chance = 1,
     action = function(pos, node, active_object_count, active_object_count_wider)
-    local objs = minetest.get_objects_inside_radius(pos, 1)
+    local objs = core.get_objects_inside_radius(pos, 1)
         for k, obj in pairs(objs) do
         obj:set_hp(obj:get_hp()-1)
-        minetest.sound_play("bobblocks_trap_fall",
+        core.sound_play("bobblocks_trap_fall",
 	    {pos = pos, gain = 1.0, max_hear_distance = 3,})
     end
     end,
 })
 
-minetest.register_abm(
+core.register_abm(
 	{nodenames = {"bobblocks:trap_spike_major"},
     interval = 1.0,
     chance = 1,
     action = function(pos, node, active_object_count, active_object_count_wider)
-    local objs = minetest.get_objects_inside_radius(pos, 1)
+    local objs = core.get_objects_inside_radius(pos, 1)
         for k, obj in pairs(objs) do
             obj:set_hp(obj:get_hp()-100)
-        minetest.sound_play("bobblocks_trap_fall",
+        core.sound_play("bobblocks_trap_fall",
 	    {pos = pos, gain = 1.0, max_hear_distance = 3,})            
         end
     end,
