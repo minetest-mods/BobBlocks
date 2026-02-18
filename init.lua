@@ -1,4 +1,3 @@
-print("[BobBlocks By minetest@rabbibob.com] Version 0.0.8 loading....")
 print("[BobBlocks] loading Blocks")
 dofile(core.get_modpath("bobblocks") .. "/blocks.lua")
 print("[BobBlocks] loaded Blocks")
@@ -8,4 +7,5 @@ print("[BobBlocks] loaded Health")
 print("[BobBlocks] loading Traps")
 dofile(core.get_modpath("bobblocks") .. "/trap.lua")
 print("[BobBlocks] loaded Traps")
-print("[BobBlocks By minetest@rabbibob.com] Version 0.0.8 loaded!")
+print("[BobBlocks] Mod loaded successfully!")
+

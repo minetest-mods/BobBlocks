@@ -1,14 +1,14 @@
--- BobBlocks v0.0.8
--- (Minetest 0.4.5 compatible 20130315)
+-- BobBlocks Mod for Minetest/Luanti
+-- (Versions older than 5.4.0 are not supported as of 18/02/26)
 -- http://forum.minetest.net/viewtopic.php?id=1274
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
---          Requirements: Mesecons                                      --
---          http://forum.minetest.net/viewtopic.php?id=628              --
+--          Requirements:                                               --
 --                                                                      --
---          Does not support jeija or older version of Mesecons         --
---          before 1/20/2013                                            --
---          http://forum.minetest.net/viewtopic.php?pid=64976#p64976    --
+--          Mesecons (https://github.com/minetest-mods/mesecons.git)    --
+--          Default (https://github.com/minetest-game/default.git)      --
+--          UnifiedDyes (https://github.com/mt-mods/unifieddyes.git)    --
+--                                                                      --
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 -- Colored Lit Blocks
