@@ -1,11 +1,15 @@
-print("[BobBlocks By minetest@rabbibob.com] Version 0.0.8 loading....")
+if not core.features.use_texture_alpha_string_modes then
+	error("BobBlocks requires Luanti/Minetest 5.4.0 or newer. Please update.")
+end
+	
 print("[BobBlocks] loading Blocks")
-dofile(minetest.get_modpath("bobblocks") .. "/blocks.lua")
+dofile(core.get_modpath("bobblocks") .. "/blocks.lua")
 print("[BobBlocks] loaded Blocks")
 print("[BobBlocks] loading Health")
-dofile(minetest.get_modpath("bobblocks") .. "/health.lua")
+dofile(core.get_modpath("bobblocks") .. "/health.lua")
 print("[BobBlocks] loaded Health")
 print("[BobBlocks] loading Traps")
-dofile(minetest.get_modpath("bobblocks") .. "/trap.lua")
+dofile(core.get_modpath("bobblocks") .. "/trap.lua")
 print("[BobBlocks] loaded Traps")
-print("[BobBlocks By minetest@rabbibob.com] Version 0.0.8 loaded!")
+print("[BobBlocks] Mod loaded successfully!")
+
